@@ -33,5 +33,13 @@ class CustomerController extends Controller
         $customer->dob=$request['dob'];
         $customer->password=md5($request['password']);
        $customer->save(); 
+
+       return redirect('/customer/view');
+    }
+    public function view(){
+        $customer= Customer ::all();
+        $data = compact('customer');
+        return view('customer-view')->with(($data));
+
     }
 }

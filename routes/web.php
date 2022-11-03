@@ -15,5 +15,7 @@ use App\Http\Controllers\CustomerController;
 */
 Route :: get('/',[CustomerController :: class,'customer']);
 Route :: post('/',[CustomerController::class,'store']);
+Route :: get('/customer/view',[CustomerController::class,'view']);
+
 
 
